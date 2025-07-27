@@ -10,15 +10,29 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 export default function BooksPage() {
   const { data: books, isLoading, isError } = useGetBooksQuery();
-  console.log(books)
   const [deleteBook] = useDeleteBookMutation();
 
   const handleDelete = async (id: string) => {
-    if (confirm("Are you sure you want to delete this book?")) {
+    try {
       await deleteBook(id).unwrap();
+      toast.success("Book deleted successfully!");
+    } catch {
+      toast.error("Failed to delete book.");
     }
   };
 
@@ -69,13 +83,28 @@ export default function BooksPage() {
                 <Link to={`/borrow/${book._id}`}>
                   <Button size="sm" variant="secondary">Borrow</Button>
                 </Link>
-                <Button
-                  size="sm"
-                  variant="destructive"
-                  onClick={() => handleDelete(book._id)}
-                >
-                  Delete
-                </Button>
+                
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <Button size="sm" variant="destructive">Delete</Button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent>
+                    <AlertDialogHeader>
+                      <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+                      <AlertDialogDescription>
+                        This action cannot be undone. The book "{book.title}" will be permanently deleted.
+                      </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                      <AlertDialogCancel>Cancel</AlertDialogCancel>
+                      <AlertDialogAction
+                        onClick={() => handleDelete(book._id)}
+                      >
+                        Yes, Delete
+                      </AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
               </TableCell>
             </TableRow>
           ))}
