@@ -2,7 +2,7 @@ import { apiSlice } from "@/app/apiSlice";
 
 export const booksApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
-    getBooks: builder.query<any[], void>({
+    getBooks: builder.query<{ data: any[] }, void>({
       query: () => "/books",
       providesTags: ["Books"],
     }),

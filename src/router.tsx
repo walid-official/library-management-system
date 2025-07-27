@@ -8,6 +8,7 @@ import AppLayout from "./layout/AppLayout";
 // import ErrorPage from "./pages/ErrorPage";
 import { Home } from './pages/Home';
 import CreateBookPage from "./pages/CreateBookPage";
+import BooksPage from "./pages/BooksPage";
 
 export const router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ export const router = createBrowserRouter([
     // errorElement: <ErrorPage />,
     children: [
       { path: "/", element: <Home />},
-    //   { path: "books", element: <BooksPage />, loader: booksLoader },
+      { path: "books", element: <BooksPage />},
       { path: "create-book", element: <CreateBookPage />},
     //   { path: "edit-book/:id", element: <EditBookPage />, loader: editBookLoader, action: editBookAction },
     //   { path: "borrow/:bookId", element: <BorrowPage />, loader: borrowLoader, action: borrowAction },
