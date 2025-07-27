@@ -9,6 +9,7 @@ import AppLayout from "./layout/AppLayout";
 import { Home } from './pages/Home';
 import CreateBookPage from "./pages/CreateBookPage";
 import BooksPage from "./pages/BooksPage";
+import EditBookPage from "./pages/EditBookPage";
 
 export const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ export const router = createBrowserRouter([
       { path: "/", element: <Home />},
       { path: "books", element: <BooksPage />},
       { path: "create-book", element: <CreateBookPage />},
-    //   { path: "edit-book/:id", element: <EditBookPage />, loader: editBookLoader, action: editBookAction },
+      { path: "edit-book/:id", element: <EditBookPage />},
     //   { path: "borrow/:bookId", element: <BorrowPage />, loader: borrowLoader, action: borrowAction },
     //   { path: "borrow-summary", element: <BorrowSummaryPage />, loader: borrowSummaryLoader },
     ],
