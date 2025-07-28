@@ -37,7 +37,7 @@ export default function CreateBookPage() {
   };
 
   return (
-    <Card className="max-w-lg mx-auto p-6">
+    <Card className="max-w-lg mx-auto p-6 mt-5">
       <CardHeader>
         <CardTitle>Add New Book</CardTitle>
       </CardHeader>

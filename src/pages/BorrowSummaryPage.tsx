@@ -18,7 +18,7 @@ export default function BorrowSummaryPage() {
   if (isError) return <p className="text-center mt-6 text-red-500">Failed to fetch summary.</p>;
 
   return (
-    <div className="p-6 max-w-4xl mx-auto">
+    <div className="px-3 mt-5 max-w-4xl mx-auto">
       <h1 className="text-2xl font-semibold mb-4">📚 Borrowed Books Summary</h1>
 
       <Table>

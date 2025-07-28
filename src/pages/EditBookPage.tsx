@@ -66,7 +66,7 @@ export default function EditBookPage() {
   if (isLoading) return <p className="text-center mt-6">Loading book details...</p>;
 
   return (
-    <Card className="max-w-lg mx-auto p-6">
+    <Card className="max-w-lg mx-auto p-6 mt-5">
       <CardHeader>
         <CardTitle>Edit Book</CardTitle>
       </CardHeader>

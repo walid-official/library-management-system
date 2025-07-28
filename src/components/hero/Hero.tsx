@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Button } from '../ui/button';
 import { BookOpen, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';

@@ -1,8 +1,5 @@
-import React from 'react';
-import { Button } from '../ui/button';
-import { BarChart3, BookOpen, Calendar } from 'lucide-react';
-import { Input } from '../ui/input';
 
+import { BarChart3, BookOpen, Calendar } from 'lucide-react';
 const Features = () => {
     return (
         <div className=''>
@@ -267,90 +264,11 @@ const Features = () => {
                         </div>
                     </div>
                     </div>
-
-                    {/* Right Side - Multiple Images with Styling */}
-                    {/* <div className="relative">
-                        <div className="grid grid-cols-2 gap-4">
-              
-                        <div className="col-span-2 relative">
-                            <div className="bg-gradient-to-br from-emerald-100 to-teal-100 rounded-2xl p-4 shadow-lg">
-                            <img
-                                src="/images/book-5.jpg"
-                                alt="Library Management Dashboard"
-                                className="w-full h-48 object-cover rounded-xl shadow-md"
-                            />
-                            </div>
-                        </div>
-
-                        <div className="relative transform rotate-2 hover:rotate-0 transition-transform duration-300">
-                            <div className="bg-gradient-to-br from-blue-100 to-indigo-100 rounded-xl p-3 shadow-md">
-                            <img
-                                src="/images/book-3.webp"
-                                alt="Book Management Interface"
-                                className="w-full h-32 object-cover rounded-lg"
-                            />
-                            </div>
-                        </div>
-
-                       
-                        <div className="relative transform -rotate-2 hover:rotate-0 transition-transform duration-300">
-                            <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl p-3 shadow-md">
-                            <img
-                                src="/images/book-4.webp"
-                                alt="Borrowing System Interface"
-                                className="w-full h-32 object-cover rounded-lg"
-                            />
-                            </div>
-                        </div>
-
-                        <div className="col-span-2 relative transform hover:scale-105 transition-transform duration-300">
-                            <div className="bg-gradient-to-br from-orange-100 to-amber-100 rounded-xl p-3 shadow-md">
-                            <img
-                                src="/images/book-2.webp"
-                                alt="Analytics and Reports"
-                                className="w-full h-24 object-cover rounded-lg"
-                            />
-                            </div>
-                        </div>
-                        </div>
-
-                       
-                        <div className="absolute -top-4 -right-4 w-20 h-20 bg-emerald-200 rounded-full opacity-20 animate-pulse"></div>
-                        <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-blue-200 rounded-full opacity-20 animate-pulse delay-1000"></div>
-                    </div> */}
                 </div>
             </div>
             </section>
           </div>
-
-        {/* Stats Section */}
-      
-
-        {/* CTA Section */}
-        {/* <section className="w-full py-12 md:py-24 lg:py-32 bg-emerald-600">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">
-                  Ready to Transform Your Library?
-                </h2>
-                <p className="mx-auto max-w-[600px] text-emerald-100 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Join hundreds of libraries already using LibraryPro to streamline their operations and improve user
-                  experience.
-                </p>
-              </div>
-              <div className="w-full max-w-sm space-y-2">
-                <form className="flex gap-2">
-                  <Input type="email" placeholder="Enter your email" className="max-w-lg flex-1 bg-white" />
-                  <Button type="submit" variant="secondary">
-                    Get Started
-                  </Button>
-                </form>
-                <p className="text-xs text-emerald-100">Start your 30-day free trial. No credit card required.</p>
-              </div>
-            </div>
-          </div>
-        </section> */}
+       
         </div>
     );
 };

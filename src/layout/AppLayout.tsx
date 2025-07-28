@@ -5,9 +5,9 @@ import Navbar from "@/components/navbar/Navbar";
 
 export default function AppLayout() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className=" flex flex-col">
       <Navbar />
-        <main className="">
+        <main className="min-h-screen">
             <Outlet />
         </main>
       <Footer />

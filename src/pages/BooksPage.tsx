@@ -1,16 +1,3 @@
-import { useGetBooksQuery, useDeleteBookMutation } from "@/features/books/booksApi";
-import { Button } from "@/components/ui/button";
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { Link } from "react-router-dom";
-import toast from "react-hot-toast";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -22,6 +9,19 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { Button } from "@/components/ui/button";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { useDeleteBookMutation, useGetBooksQuery } from "@/features/books/booksApi";
+import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 export default function BooksPage() {
   const { data: books, isLoading, isError } = useGetBooksQuery();
@@ -40,7 +40,7 @@ export default function BooksPage() {
   if (isError) return <p className="text-center mt-10 text-red-500">Failed to fetch books.</p>;
 
   return (
-    <div className="p-6">
+    <div className="max-w-7xl mx-auto mt-5 px-3">
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-xl font-semibold">📚 All Books</h1>
         <Link to="/create-book">
@@ -78,15 +78,15 @@ export default function BooksPage() {
               </TableCell>
               <TableCell className="flex justify-end gap-2">
                 <Link to={`/edit-book/${book._id}`}>
-                  <Button size="sm">Edit</Button>
+                  <Button size="sm" className="cursor-pointer">Edit</Button>
                 </Link>
                 <Link to={`/borrow/${book._id}`}>
-                  <Button size="sm" variant="secondary">Borrow</Button>
+                  <Button size="sm" className="cursor-pointer" variant="secondary">Borrow</Button>
                 </Link>
                 
                 <AlertDialog>
                   <AlertDialogTrigger asChild>
-                    <Button size="sm" variant="destructive">Delete</Button>
+                    <Button size="sm" className="cursor-pointer" variant="destructive">Delete</Button>
                   </AlertDialogTrigger>
                   <AlertDialogContent>
                     <AlertDialogHeader>
