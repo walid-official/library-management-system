@@ -7,7 +7,7 @@ const States = () => {
               backgroundImage: "url('/images/states.jpg')",
             }}>
               <section className="w-full py-12 md:py-24 lg:py-32 bg-white/5 backdrop-blur-sm">
-          <div className="container px-4 md:px-6">
+          <div className="mx-auto max-w-7xl px-3">
             <div className="grid gap-6 lg:grid-cols-3 lg:gap-12">
               <div className="flex flex-col items-center space-y-4 text-center">
                 <div className="text-4xl font-bold text-emerald-600">10,000+</div>

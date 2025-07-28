@@ -59,7 +59,7 @@ const Blog = () => {
               {/* Blog Post 2 */}
               <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 group">
                 <img
-                  src="/images/book-2.webp"
+                  src="/images/book-10.webp"
                   alt="Blog Post Image"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -96,7 +96,7 @@ const Blog = () => {
               {/* Blog Post 3 */}
               <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 group">
                 <img
-                  src="/images/book-3.webp"
+                  src="/images/book-2.webp"
                   alt="Blog Post Image"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -112,7 +112,7 @@ const Blog = () => {
                   </h3>
                   <p className="text-gray-600 text-sm line-clamp-3">
                     Dive into the latest data on how patrons are interacting with library collections, from e-books to
-                    physical copies.
+                    physical copies. Marge with you thinking and boost that.
                   </p>
                   <div className="flex items-center justify-between text-sm text-gray-500 pt-2">
                     <div className="flex items-center gap-2">
