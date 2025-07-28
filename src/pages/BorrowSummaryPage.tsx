@@ -1,4 +1,3 @@
-
 import {
   Table,
   TableBody,
@@ -53,4 +52,3 @@ export default function BorrowSummaryPage() {
     </div>
   );
 }
-
