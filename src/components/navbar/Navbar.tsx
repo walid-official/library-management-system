@@ -6,7 +6,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="border-b py-2">
+    <header className="border-b py-2 sticky top-0 z-50 bg-white/40 backdrop-blur-md ">
       <div className="px-4 h-16 flex items-center justify-between mx-auto max-w-7xl">
         {/* Logo */}
         <Link to="/" className="flex items-center">
