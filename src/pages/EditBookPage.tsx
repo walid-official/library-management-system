@@ -138,7 +138,7 @@ export default function EditBookPage() {
             {errors.copies && <p className="text-red-500 text-sm">{errors.copies.message}</p>}
           </div>
 
-          <Button type="submit" className="w-full">
+          <Button type="submit" className="w-full cursor-pointer">
             Update Book
           </Button>
         </form>

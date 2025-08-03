@@ -105,7 +105,7 @@ export default function CreateBookPage() {
             )}
           </div>
 
-          <Button type="submit" className="w-full">
+          <Button type="submit" className="w-full cursor-pointer">
             Add Book
           </Button>
         </form>

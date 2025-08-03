@@ -44,7 +44,7 @@ export default function BooksPage() {
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-xl font-semibold">📚 All Books</h1>
         <Link to="/create-book">
-          <Button>Add Book</Button>
+          <Button className="cursor-pointer">Add Book</Button>
         </Link>
       </div>
 
@@ -81,7 +81,7 @@ export default function BooksPage() {
                   <Button size="sm" className="cursor-pointer">Edit</Button>
                 </Link>
                 <Link to={`/borrow/${book._id}`}>
-                  <Button size="sm" className="cursor-pointer" variant="secondary">Borrow</Button>
+                  <Button size="sm" className="cursor-pointer border" variant="secondary">Borrow</Button>
                 </Link>
                 
                 <AlertDialog>
@@ -96,8 +96,9 @@ export default function BooksPage() {
                       </AlertDialogDescription>
                     </AlertDialogHeader>
                     <AlertDialogFooter>
-                      <AlertDialogCancel>Cancel</AlertDialogCancel>
+                      <AlertDialogCancel className="cursor-pointer">Cancel</AlertDialogCancel>
                       <AlertDialogAction
+                      className="cursor-pointer"
                         onClick={() => handleDelete(book._id)}
                       >
                         Yes, Delete
