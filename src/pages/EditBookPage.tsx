@@ -21,7 +21,7 @@ const GENRE_OPTIONS = [
 export default function EditBookPage() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { data: bookResponse, isLoading } = useGetBookQuery(id!);
+  const { data: bookResponse, isLoading,refetch } = useGetBookQuery(id!);
 
   // Extract actual book data from API response
   const book = bookResponse?.data;
@@ -61,9 +61,10 @@ export default function EditBookPage() {
   const onSubmit = async (data: BookFormData) => {
     await updateBook({ id: id!, data }).unwrap();
     navigate("/books");
+    refetch()
   };
 
-  if (isLoading) return <p className="text-center mt-6">Loading book details...</p>;
+  if (isLoading) return <p className="flex justify-center items-center min-h-[80vh] text-3xl mt-6">Loading book details...</p>;
 
   return (
     <Card className="max-w-lg mx-auto p-6 mt-5">

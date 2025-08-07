@@ -21,11 +21,12 @@ import {
 } from "@/components/ui/table";
 import { useDeleteBookMutation, useGetBooksQuery } from "@/features/books/booksApi";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function BooksPage() {
   const { data: books, isLoading, isError } = useGetBooksQuery();
   const [deleteBook] = useDeleteBookMutation();
+  const navigate = useNavigate();
 
   const handleDelete = async (id: string) => {
     try {
@@ -36,7 +37,7 @@ export default function BooksPage() {
     }
   };
 
-  if (isLoading) return <p className="text-center mt-10">Loading books...</p>;
+  if (isLoading) return <p className="flex justify-center items-center min-h-[80vh] text-3xl mt-10">Loading books...</p>;
   if (isError) return <p className="text-center mt-10 text-red-500">Failed to fetch books.</p>;
 
   return (
@@ -63,7 +64,11 @@ export default function BooksPage() {
         </TableHeader>
         <TableBody>
           {books?.data?.map((book: any) => (
-            <TableRow key={book?._id}>
+            <TableRow
+              key={book?._id}
+              onClick={() => navigate(`/books/${book._id}`)} // ✅ row click
+              className="cursor-pointer hover:bg-gray-100 transition"
+            >
               <TableCell className="font-medium">{book?.title}</TableCell>
               <TableCell>{book?.author}</TableCell>
               <TableCell>{book?.genre}</TableCell>
@@ -76,14 +81,24 @@ export default function BooksPage() {
                   <span className="text-red-500 font-semibold">Unavailable</span>
                 )}
               </TableCell>
-              <TableCell className="flex justify-end gap-2">
+              <TableCell
+                onClick={(e) => e.stopPropagation()} // ✅ prevent row click from triggering
+                className="flex justify-end gap-2"
+              >
                 <Link to={`/edit-book/${book._id}`}>
                   <Button size="sm" className="cursor-pointer">Edit</Button>
                 </Link>
-                <Link to={`/borrow/${book._id}`}>
-                  <Button size="sm" className="cursor-pointer border" variant="secondary">Borrow</Button>
+                 <Link to={`/borrow/${book._id}`}>
+                  <Button
+                    size="sm"
+                    className="cursor-pointer border"
+                    variant="secondary"
+                    disabled={book?.copies === 0} 
+                  >
+                    Borrow
+                  </Button>
                 </Link>
-                
+
                 <AlertDialog>
                   <AlertDialogTrigger asChild>
                     <Button size="sm" className="cursor-pointer" variant="destructive">Delete</Button>
@@ -98,7 +113,7 @@ export default function BooksPage() {
                     <AlertDialogFooter>
                       <AlertDialogCancel className="cursor-pointer">Cancel</AlertDialogCancel>
                       <AlertDialogAction
-                      className="cursor-pointer"
+                        className="cursor-pointer"
                         onClick={() => handleDelete(book._id)}
                       >
                         Yes, Delete
